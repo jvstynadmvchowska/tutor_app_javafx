@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPageBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="1200.0" onMouseDragged="#movingWhenDragged" onMousePressed="#movingWhenPressed" prefHeight="700.0" prefWidth="1200.0" stylesheets="@../css/mainPage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testapkikorki.MainPageLogic">
+
+    <top>
+        <VBox alignment="CENTER" prefHeight="169.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <HBox alignment="TOP_RIGHT" maxHeight="45.0" minHeight="45.0" prefHeight="45.0" prefWidth="1200.0" style="-fx-border-color: black; -fx-background-color: white;" BorderPane.alignment="CENTER">
+                <children>
+                    <ImageView fitHeight="49.0" fitWidth="45.0" onMouseClicked="#minimizeWindow" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../../png/minimalise.png" />
+                        </image>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+
+                    </ImageView>
+                    <ImageView fitHeight="35.0" fitWidth="38.0" onMouseClicked="#maximiseWindow" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../../png/maximize.png" />
+                        </image>
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </HBox.margin>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+
+
+                    </ImageView>
+                    <ImageView fitHeight="34.0" fitWidth="33.0" onMouseClicked="#closeWindow" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../../png/close.png" />
+                        </image>
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </HBox.margin>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+
+
+                    </ImageView>
+                </children>
+            </HBox>
+            <HBox fx:id="HBoxButtonBar" alignment="CENTER_LEFT" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="1200.0" stylesheets="@../css/mainPage.css">
+                <children>
+                    <Button fx:id="mainPageButton" alignment="CENTER" onAction="#switchToMainPage" prefHeight="80.0" prefWidth="170.0" text="Main Page" textAlignment="JUSTIFY">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+
+
+                    </Button>
+                    <Button fx:id="lessonsButton" alignment="CENTER" onAction="#switchToLessons" prefHeight="80.0" prefWidth="150.0" text="Lessons" textAlignment="JUSTIFY">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+
+
+                    </Button>
+                    <Button fx:id="studentsButton" alignment="CENTER" onAction="#switchToStudents" prefHeight="80.0" prefWidth="150.0" text="Students" textAlignment="JUSTIFY">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+
+
+                    </Button>
+                    <Button fx:id="paymentsButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToPayments" prefHeight="80.0" prefWidth="150.0" text="Payments" textAlignment="JUSTIFY">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+
+
+                    </Button>
+                    <Button fx:id="savingsButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToSavings" prefHeight="80.0" prefWidth="150.0" text="Savings" textAlignment="JUSTIFY">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+
+
+                    </Button>
+                    <Button fx:id="calendarButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToCalendar" prefHeight="80.0" prefWidth="150.0" text="Calendar" textAlignment="JUSTIFY">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+
+
+                    </Button>
+                    <Button fx:id="moreButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" stylesheets="@../css/mainPage.css" text="More" textAlignment="JUSTIFY">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Button>
+                </children>
+            </HBox>
+            <Label fx:id="mainPageTitleLabel" alignment="BOTTOM_CENTER" contentDisplay="CENTER" minHeight="50.0" prefHeight="63.0" prefWidth="1000.0" text="Main Page">
+                <font>
+                    <Font name="System Bold" size="35.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" prefHeight="521.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0">
+                    <children>
+                        <Label text="Search">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="filterTextField" maxWidth="538.0" prefHeight="30.0" prefWidth="538.0" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </HBox>
+                <Label fx:id="tableLabel" alignment="CENTER" minHeight="50.0" prefHeight="50.0" prefWidth="250.0" style="-fx-border-color: black; -fx-border-width: 0.5;" styleClass="infoLabel" text="Lessons">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </Label>
+                <TableView fx:id="tableView" maxHeight="300.0" maxWidth="600.0" minHeight="300.0" minWidth="600.0" style="-fx-border-color: black; -fx-border-width: 0.5 0.5 0.5 0.5;">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" maxWidth="120.0" prefWidth="150.0" text="Name" />
+                        <TableColumn fx:id="dateColumn" maxWidth="120.0" prefWidth="150.0" style="-fx-border-width: 0.5 0.5 0.5 0.5;" text="Date" />
+                        <TableColumn fx:id="hoursColumn" maxWidth="120.0" prefWidth="150.0" style="-fx-border-width: 0.5 0.5 0.5 0.5;" text="Hours" />
+                        <TableColumn fx:id="timeColumn" maxWidth="120.0" prefWidth="150.0" style="-fx-border-width: 0.5 0.5 0.5 0.5;" text="Time" />
+                        <TableColumn fx:id="typeColumn" maxWidth="120.0" prefWidth="150.0" style="-fx-border-width: 0.5 0.5 0.5 0.5;" text="Type" />
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER" prefHeight="80.0" prefWidth="600.0">
+                    <children>
+                        <Button fx:id="showStudentsButton" focusTraversable="false" mnemonicParsing="false" onAction="#setStudentsInTableView" prefHeight="40.0" prefWidth="130.0" styleClass="otherButtons" text="Show Students">
+                            <HBox.margin>
+                                <Insets left="15.0" right="15.0" />
+                            </HBox.margin>
+
+
+                        </Button>
+                        <Button fx:id="showPaymentsButton" focusTraversable="false" mnemonicParsing="false" onAction="#setPaymentsInTableView" prefHeight="40.0" prefWidth="130.0" styleClass="otherButtons" text="Show Payments">
+                            <HBox.margin>
+                                <Insets left="15.0" right="15.0" />
+                            </HBox.margin>
+
+
+                        </Button>
+                        <Button fx:id="showSavingsButton" focusTraversable="false" mnemonicParsing="false" onAction="#setSavingsInTableView" prefHeight="40.0" prefWidth="130.0" styleClass="otherButtons" text="Show Savings">
+                            <HBox.margin>
+                                <Insets left="15.0" right="15.0" />
+                            </HBox.margin>
+
+
+                        </Button>
+                        <Button fx:id="showLessonsButton" focusTraversable="false" mnemonicParsing="false" onAction="#setLessonsInTableView" prefHeight="40.0" prefWidth="130.0" styleClass="otherButtons" text="Show Lessons">
+                            <HBox.margin>
+                                <Insets left="15.0" right="15.0" />
+                            </HBox.margin>
+
+
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <left>
+        <VBox alignment="CENTER" prefHeight="571.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="hours per week:">
+                    <font>
+                        <Font name="System Italic" size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="hoursPerWeekTextField" alignment="CENTER" editable="false" focusTraversable="false" maxHeight="50.0" maxWidth="60.0" minWidth="60.0" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 0; -fx-border-width: 1 1 1 1; -fx-border-color: black;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+                <Pane prefHeight="30.0" prefWidth="100.0" />
+                <Label layoutX="46.0" layoutY="259.0" text="weekly income:">
+                    <font>
+                        <Font name="System Italic" size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="weeklyIncomeTextField" alignment="CENTER" editable="false" focusTraversable="false" layoutX="10.0" layoutY="268.0" maxWidth="125.0" prefHeight="50.0" prefWidth="125.0" style="-fx-background-radius: 0; -fx-border-width: 1 1 1 1; -fx-border-color: black;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+                <Pane layoutX="10.0" layoutY="280.0" prefHeight="30.0" prefWidth="100.0" />
+                <Label layoutX="46.0" layoutY="222.0" text="hours per month:">
+                    <font>
+                        <Font name="System Italic" size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="hoursPerMonthTextField" alignment="CENTER" editable="false" focusTraversable="false" layoutX="10.0" layoutY="231.0" maxHeight="50.0" maxWidth="60.0" prefHeight="50.0" style="-fx-background-radius: 0; -fx-border-width: 1 1 1 1; -fx-border-color: black;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+                <Pane layoutX="10.0" layoutY="244.0" prefHeight="30.0" prefWidth="100.0" />
+                <Label layoutX="46.0" layoutY="185.0" text="monthly income:">
+                    <font>
+                        <Font name="System Italic" size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="monthlyIncomeTextField" alignment="CENTER" editable="false" focusTraversable="false" layoutX="10.0" layoutY="194.0" maxHeight="50.0" maxWidth="125.0" prefHeight="50.0" prefWidth="125.0" style="-fx-background-radius: 0; -fx-border-width: 1 1 1 1; -fx-border-color: black;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+            </children>
+        </VBox>
+    </left>
+    <right>
+        <VBox alignment="CENTER" prefHeight="571.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="number of students:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="numberOfStudentsTextField" alignment="CENTER" editable="false" focusTraversable="false" maxHeight="50.0" maxWidth="60.0" prefHeight="50.0" prefWidth="60.0" style="-fx-border-color: black;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+                <Pane prefHeight="30.0" prefWidth="100.0" />
+                <Label layoutX="116.0" layoutY="259.0" text="savings in total:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="savingsInTotalTextField" alignment="CENTER" editable="false" focusTraversable="false" layoutX="85.0" layoutY="268.0" maxHeight="50.0" maxWidth="125.0" prefHeight="50.0" style="-fx-border-color: black;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+                <Pane layoutX="10.0" layoutY="280.0" prefHeight="30.0" prefWidth="100.0" />
+                <Label layoutX="116.0" layoutY="222.0" text="payments in total:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="paymentsInTotalTextField" alignment="CENTER" editable="false" focusTraversable="false" layoutX="85.0" layoutY="231.0" maxHeight="50.0" maxWidth="125.0" prefHeight="50.0" style="-fx-border-color: black;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TextField>
+            </children>
+        </VBox>
+    </right>
+</BorderPane>

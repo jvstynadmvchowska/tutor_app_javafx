@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="savingsBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="1200.0" onMouseDragged="#movingWhenDragged" onMousePressed="#movingWhenPressed" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/savings.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testapkikorki.SavingsLogic">
+   <top>
+      <VBox alignment="CENTER" prefHeight="94.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+         <HBox alignment="TOP_RIGHT" maxHeight="45.0" minHeight="45.0" prefHeight="45.0" prefWidth="1000.0" style="-fx-border-color: black; -fx-background-color: white;" BorderPane.alignment="CENTER">
+            <children>
+               <ImageView fitHeight="49.0" fitWidth="45.0" onMouseClicked="#minimizeWindow" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../png/minimalise.png" />
+                  </image>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </ImageView>
+               <ImageView fitHeight="35.0" fitWidth="38.0" onMouseClicked="#maximiseWindow" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../png/maximize.png" />
+                  </image>
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </ImageView>
+               <ImageView fitHeight="34.0" fitWidth="33.0" onMouseClicked="#closeWindow" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../png/close.png" />
+                  </image>
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+
+               </ImageView>
+            </children>
+         </HBox>
+         <HBox fx:id="HBoxButtonBar" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="1000.0">
+            <children>
+               <Button fx:id="mainPageButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToMainPage" prefHeight="60.0" prefWidth="170.0" text="Main Page" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="lessonsButton" alignment="CENTER" focusTraversable="false" maxHeight="60.0" mnemonicParsing="false" onAction="#switchToLessons" prefHeight="60.0" prefWidth="150.0" text="Lessons" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="studentsButton" alignment="CENTER" focusTraversable="false" maxHeight="60.0" mnemonicParsing="false" onAction="#switchToStudents" prefHeight="60.0" prefWidth="150.0" text="Students" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="paymentsButton" alignment="CENTER" focusTraversable="false" maxHeight="60.0" mnemonicParsing="false" onAction="#switchToPayments" prefHeight="60.0" prefWidth="150.0" text="Payments" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="savingsButton" alignment="CENTER" focusTraversable="false" maxHeight="60.0" mnemonicParsing="false" onAction="#switchToSavings" prefHeight="60.0" prefWidth="150.0" text="Savings" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="calendarButton" alignment="CENTER" focusTraversable="false" maxHeight="60.0" mnemonicParsing="false" onAction="#switchToCalendar" prefHeight="60.0" prefWidth="150.0" text="Calendar" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="moreButton" alignment="CENTER" focusTraversable="false" maxHeight="60.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text="More" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Button>
+            </children>
+         </HBox>
+         <Label fx:id="savingsTitleLabel" alignment="BOTTOM_CENTER" layoutX="9.0" layoutY="86.0" minHeight="70.0" prefHeight="70.0" prefWidth="1000.0" text="Savings">
+            <font>
+               <Font name="System Bold" size="35.0" />
+            </font>
+         </Label>
+      </VBox>
+   </top>
+   <center>
+      <HBox alignment="CENTER">
+         <VBox alignment="CENTER" layoutX="70.0" layoutY="130.0" prefHeight="458.0" prefWidth="484.0">
+            <children>
+               <Pane prefHeight="250.0" prefWidth="606.0">
+                  <children>
+                     <Pane layoutX="123.0" layoutY="46.0" prefHeight="169.0" prefWidth="239.0" style="-fx-background-color: #fff7ed; -fx-border-color: black;">
+                        <children>
+                           <Label alignment="CENTER" layoutX="45.0" layoutY="14.0" prefHeight="25.0" prefWidth="150.0" styleClass="infoLabel" text="Deposit a saving">
+                              <font>
+                                 <Font name="System Italic" size="15.0" />
+                              </font>
+                           </Label>
+                           <Button fx:id="addButton" layoutX="84.0" layoutY="118.0" mnemonicParsing="false" onAction="#addSaving" prefHeight="26.0" prefWidth="71.0" styleClass="otherButtons" text="Submit" />
+                           <TextField fx:id="addTextField" alignment="CENTER" layoutX="45.0" layoutY="56.0" prefHeight="25.0" prefWidth="150.0" promptText="e.g. 45.00 zl" />
+                           <DatePicker fx:id="dateDatePicker" layoutX="45.0" layoutY="87.0" prefHeight="25.0" prefWidth="150.0" />
+                        </children>
+                     </Pane>
+                  </children>
+               </Pane>
+               <Pane prefHeight="250.0" prefWidth="200.0">
+                  <children>
+                     <TextField fx:id="savedTextField" alignment="CENTER" editable="false" focusTraversable="false" layoutX="192.0" layoutY="40.0" maxWidth="100.0" prefHeight="50.0" prefWidth="100.0">
+                        <font>
+                           <Font size="15.0" />
+                        </font></TextField>
+                     <Label layoutX="197.0" layoutY="14.0" text="Saved money:">
+                        <font>
+                           <Font name="System Italic" size="15.0" />
+                        </font>
+                        <padding>
+                           <Insets bottom="5.0" />
+                        </padding></Label>
+                     <TextField fx:id="toDepositTextField" alignment="CENTER" editable="false" focusTraversable="false" layoutX="192.0" layoutY="133.0" maxWidth="100.0" prefHeight="50.0" prefWidth="100.0">
+                        <font>
+                           <Font size="15.0" />
+                        </font></TextField>
+                     <Label layoutX="182.0" layoutY="107.0" text="Savings to deposit:">
+                        <font>
+                           <Font name="System Italic" size="15.0" />
+                        </font>
+                        <padding>
+                           <Insets bottom="5.0" />
+                        </padding></Label>
+                  </children>
+               </Pane>
+            </children>
+         </VBox>
+         <VBox alignment="CENTER" layoutX="195.0" layoutY="330.0" prefHeight="500.0" prefWidth="600.0">
+            <children>
+               <Pane prefHeight="250.0" prefWidth="606.0">
+                  <children>
+                     <Pane layoutX="50.0" layoutY="45.0" maxHeight="250.0" maxWidth="500.0" prefHeight="174.0" prefWidth="500.0" style="-fx-border-color: white; -fx-border-radius: 10; -fx-border-width: 2 2 2 2;">
+                        <children>
+                           <DatePicker fx:id="fromDateDatePicker" layoutX="57.0" layoutY="44.0" promptText="from which date" />
+                           <Label layoutX="244.0" layoutY="34.0" text="-">
+                              <font>
+                                 <Font size="30.0" />
+                              </font>
+                           </Label>
+                           <DatePicker fx:id="toDateDatePicker" layoutX="269.0" layoutY="44.0" promptText="to which date" />
+                           <Button layoutX="231.0" layoutY="94.0" mnemonicParsing="false" onAction="#checkByDates" styleClass="otherButtons" text="Check" />
+                           <Button layoutX="211.0" layoutY="130.0" mnemonicParsing="false" onAction="#switchToSavings" prefHeight="27.0" prefWidth="90.0" styleClass="otherButtons" text="Reset dates" wrapText="true" />
+                           <Label layoutX="144.0" layoutY="13.0" text="Check statistics by specific dates:">
+                              <font>
+                                 <Font name="System Italic" size="15.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </Pane>
+                  </children>
+               </Pane>
+               <Pane prefHeight="250.0" prefWidth="566.0">
+                  <children>
+                     <ProgressBar fx:id="progressBar" layoutX="80.0" layoutY="83.0" prefHeight="33.0" prefWidth="440.0" progress="0.0" />
+                     <Label fx:id="percentageLabel" alignment="CENTER" layoutX="209.0" layoutY="34.0" prefHeight="47.0" prefWidth="178.0" text="Percentage of money saved out of 10 000 zł :" textAlignment="CENTER" wrapText="true">
+                        <font>
+                           <Font name="System Italic" size="15.0" />
+                        </font>
+                        <padding>
+                           <Insets bottom="5.0" />
+                        </padding>
+                     </Label>
+                     <Button focusTraversable="false" layoutX="201.0" layoutY="143.0" maxHeight="50.0" maxWidth="195.0" minHeight="50.0" minWidth="195.0" mnemonicParsing="false" onAction="#showSavingsList" prefHeight="50.0" prefWidth="195.0" styleClass="otherButtons" text="Show Savings in Table">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </Pane>
+            </children>
+         </VBox>
+      </HBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="66.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

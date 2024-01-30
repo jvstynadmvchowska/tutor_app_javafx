@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="studentsInTableBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#movingWhenDragged" onMousePressed="#movingWhenPressed" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testapkikorki.StudentsLogicTable">
+   <center>
+      <VBox alignment="CENTER" prefHeight="319.0" prefWidth="600.0" style="-fx-background-color: #eac0fa;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Search">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="filterTextField" prefHeight="26.0" prefWidth="395.0" />
+               </children>
+            </HBox>
+            <TableView fx:id="tableView" maxWidth="600.0" prefHeight="300.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="nameColumn" maxWidth="200.0" prefWidth="300.0" text="Name" />
+                <TableColumn fx:id="rateColumn" maxWidth="200.0" prefWidth="300.0" text="Rate" />
+                  <TableColumn fx:id="hoursWeeklyColumn" minWidth="200.0" prefWidth="75.0" text="Hours Weekly" />
+              </columns>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="lessonsBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="1200.0" onMouseDragged="#movingWhenDragged" onMousePressed="#movingWhenPressed" prefHeight="700.0" prefWidth="1200.0" stylesheets="@../css/lessons.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testapkikorki.LessonsLogic">
+   <top>
+      <VBox alignment="CENTER" prefHeight="94.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+         <HBox alignment="TOP_RIGHT" maxHeight="45.0" minHeight="45.0" prefHeight="45.0" prefWidth="1000.0" style="-fx-border-color: black; -fx-background-color: white;" BorderPane.alignment="CENTER">
+            <children>
+               <ImageView fitHeight="49.0" fitWidth="45.0" onMouseClicked="#minimiseWindow" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../png/minimalise.png" />
+                  </image>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </ImageView>
+               <ImageView fitHeight="35.0" fitWidth="38.0" onMouseClicked="#maximizeWindow" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../png/maximize.png" />
+                  </image>
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </ImageView>
+               <ImageView fitHeight="34.0" fitWidth="33.0" onMouseClicked="#closeWindow" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../png/close.png" />
+                  </image>
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+
+               </ImageView>
+            </children>
+         </HBox>
+         <HBox fx:id="HBoxButtonBar" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="1000.0" stylesheets="@../css/lessons.css">
+            <children>
+               <Button fx:id="mainPageButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToMainPage" prefHeight="80.0" prefWidth="170.0" text="Main Page" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="lessonsButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToLessons" prefHeight="80.0" prefWidth="150.0" text="Lessons" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="studentsButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToStudents" prefHeight="80.0" prefWidth="150.0" text="Students" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="paymentsButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToPayments" prefHeight="80.0" prefWidth="150.0" text="Payments" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="savingsButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToSavings" prefHeight="80.0" prefWidth="150.0" text="Savings" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="calendarButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#switchToCalendar" prefHeight="80.0" prefWidth="150.0" text="Calendar" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="moreButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="80.0" prefWidth="100.0" text="More" textAlignment="JUSTIFY">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Button>
+            </children>
+         </HBox>
+         <Label fx:id="lessonsTitleLable" alignment="BOTTOM_CENTER" layoutX="9.0" layoutY="86.0" minHeight="70.0" prefHeight="70.0" prefWidth="1000.0" text="Lessons">
+            <font>
+               <Font name="System Bold" size="35.0" />
+            </font>
+         </Label>
+      </VBox>
+   </top>
+         <center>
+            <HBox alignment="CENTER" layoutX="100.0" layoutY="150.0" prefHeight="236.0" prefWidth="1200.0" BorderPane.alignment="TOP_CENTER">
+               <VBox alignment="TOP_CENTER" maxHeight="475.0" minHeight="475.0" prefHeight="475.0" prefWidth="540.0" BorderPane.alignment="CENTER">
+                  <children>
+               <HBox prefHeight="250.0" prefWidth="200.0">
+                  <children>
+                     <Pane prefHeight="200.0" prefWidth="200.0" />
+                           <Pane fx:id="myDodajZajeciaPane" maxWidth="400.0" minHeight="275.0" minWidth="400.0" prefHeight="300.0" prefWidth="400.0" style="-fx-border-color: black; -fx-background-color: #fff7ed;">
+                              <children>
+                                 <Label alignment="CENTER" layoutX="150.0" layoutY="14.0" prefHeight="25.0" prefWidth="100.0" styleClass="infoLabel" text="Add lesson">
+                              <font>
+                                 <Font name="System Italic" size="15.0" />
+                              </font>
+                           </Label>
+                                 <Label layoutX="75.0" layoutY="55.0" text="Name" />
+                                 <Label layoutX="78.0" layoutY="86.0" text="Date" />
+                                 <Label layoutX="74.0" layoutY="115.0" text="Hours" />
+                                 <ChoiceBox fx:id="addNameChoiceBox" layoutX="130.0" layoutY="51.0" prefWidth="150.0">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </ChoiceBox>
+                                 <DatePicker fx:id="addDateDatePicker" layoutX="130.0" layoutY="81.0" prefHeight="25.0" prefWidth="150.0">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </DatePicker>
+                                 <TextField fx:id="addHoursTextField" layoutX="131.0" layoutY="111.0" />
+                                 <TextField fx:id="addTimeTextField" layoutX="131.0" layoutY="142.0" />
+                                 <Label layoutX="76.0" layoutY="146.0" text="Time" />
+                                 <ChoiceBox fx:id="addTypeChoiceBox" layoutX="130.0" layoutY="173.0" prefWidth="150.0">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </ChoiceBox>
+                                 <Button fx:id="addButton" layoutX="166.0" layoutY="206.0" mnemonicParsing="false" onAction="#addLesson" prefHeight="33.0" prefWidth="68.0" styleClass="otherButtons" text="Add">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                                 <Label layoutX="77.0" layoutY="177.0" text="Type" />
+                              </children>
+                        <HBox.margin>
+                           <Insets top="25.0" />
+                        </HBox.margin>
+                           </Pane>
+                     <Pane prefHeight="200.0" prefWidth="200.0" />
+                  </children>
+               </HBox>
+               <Pane prefHeight="33.0" prefWidth="540.0" />
+               <HBox prefHeight="150.0" prefWidth="200.0">
+                  <children>
+                     <Pane prefHeight="200.0" prefWidth="200.0" />
+                           <Pane fx:id="myUsunZajeciaPane" maxWidth="400.0" minWidth="400.0" prefHeight="200.0" prefWidth="400.0" style="-fx-border-color: black; -fx-background-color: #fff7ed;">
+                              <children>
+                                 <Label alignment="CENTER" layoutX="150.0" layoutY="14.0" prefHeight="25.0" prefWidth="100.0" styleClass="infoLabel" text="Remove lesson">
+                              <font>
+                                 <Font name="System Italic" size="15.0" />
+                              </font>
+                           </Label>
+                                 <ChoiceBox fx:id="removeLessonChoiceBox" layoutX="125.0" layoutY="52.0" prefWidth="150.0">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </ChoiceBox>
+                                 <Button fx:id="removeButton" layoutX="166.0" layoutY="84.0" mnemonicParsing="false" onAction="#removeLesson" prefHeight="33.0" prefWidth="68.0" styleClass="otherButtons" text="Remove">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                              </children>
+                           </Pane>
+                     <Pane prefHeight="200.0" prefWidth="200.0" />
+                  </children>
+               </HBox>
+                  </children>
+               </VBox>
+         <VBox alignment="TOP_CENTER" maxHeight="475.0" minHeight="475.0" prefHeight="475.0" prefWidth="535.0">
+            <children>
+               <HBox alignment="TOP_CENTER" maxHeight="400.0" prefHeight="463.0" prefWidth="552.0">
+                  <children>
+                     <Pane minHeight="1.0" minWidth="100.0" prefHeight="200.0" prefWidth="200.0" />
+                           <Pane fx:id="myEdytujZajeciaPane" maxHeight="350.0" maxWidth="400.0" minWidth="400.0" prefHeight="350.0" prefWidth="407.0" style="-fx-border-color: black; -fx-background-color: #fff7ed;">
+                              <children>
+                                 <Label alignment="CENTER" layoutX="150.0" layoutY="14.0" prefHeight="25.0" prefWidth="100.0" styleClass="infoLabel" text="Edit lesson">
+                              <font>
+                                 <Font name="System Italic" size="15.0" />
+                              </font>
+                           </Label>
+                                 <Button fx:id="submitButton" layoutX="166.0" layoutY="279.0" mnemonicParsing="false" onAction="#editLesson" prefHeight="33.0" prefWidth="68.0" styleClass="otherButtons" text="Submit">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                                 <ChoiceBox fx:id="editLessonChoiceBox" layoutX="123.0" layoutY="69.0" prefWidth="150.0">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </ChoiceBox>
+                                 <Label layoutX="161.0" layoutY="52.0" text="Lesson to edit" />
+                                 <Label layoutX="146.0" layoutY="112.0" text="Lesson after editing" />
+                                 <Label layoutX="61.0" layoutY="133.0" text="Name" />
+                                 <Label layoutX="63.0" layoutY="163.0" text="Date" />
+                                 <Label layoutX="60.0" layoutY="193.0" text="Hours" />
+                                 <ChoiceBox fx:id="editNameChoiceBox" layoutX="123.0" layoutY="129.0" prefWidth="150.0">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </ChoiceBox>
+                                 <DatePicker fx:id="editDateDatePicker" layoutX="123.0" layoutY="159.0" prefHeight="25.0" prefWidth="150.0">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </DatePicker>
+                                 <TextField fx:id="editHoursTextField" layoutX="124.0" layoutY="189.0" />
+                                 <TextField fx:id="editTimeTextField" layoutX="124.0" layoutY="218.0" />
+                                 <Label layoutX="62.0" layoutY="222.0" text="Time" />
+                                 <ChoiceBox fx:id="editTypeChoiceBox" layoutX="123.0" layoutY="247.0" prefWidth="150.0">
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </ChoiceBox>
+                                 <Label layoutX="64.0" layoutY="252.0" text="Type" />
+                              </children>
+                        <HBox.margin>
+                           <Insets top="25.0" />
+                        </HBox.margin>
+                           </Pane>
+                     <Pane minWidth="77.0" prefHeight="400.0" prefWidth="77.0" />
+                  </children>
+               </HBox>
+               <Button focusTraversable="false" maxHeight="50.0" maxWidth="195.0" minHeight="50.0" minWidth="195.0" mnemonicParsing="false" onAction="#showLessonsList" prefHeight="50.0" prefWidth="195.0" styleClass="otherButtons" text="Show Lessons in Table">
+                  <VBox.margin>
+                     <Insets top="25.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+            </children>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </VBox>
+            </HBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

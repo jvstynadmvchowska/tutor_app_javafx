@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  db_on_docker:
+    container_name:
+      'container_db_on_docker'
+
+    build: .
+
+    ports:
+      - '3306:3306'
+

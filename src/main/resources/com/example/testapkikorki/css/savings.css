@@ -1,0 +1,51 @@
+#zaoszczedzoneLabel{
+    -fx-border-color: "black";
+    -fx-background-color: "white";
+}
+#doWplaceniaLabel{
+    -fx-border-color: "black";
+    -fx-background-color: "white";
+}
+.root{
+    -fx-background-color:  #bcf1f5;
+}
+#HBoxButtonBar{
+    -fx-background-color :  #1ebcc8;
+    -fx-border-color: #1ba7b1;
+    -fx-border-width: 1 1 1 1;
+}
+.button{
+    -fx-background-radius: 0px;
+    -fx-border-color:  #1ba7b1;
+    -fx-background-color : #1ebcc8;
+    -fx-border-width: 1 1 1 1;
+}
+.button:hover {
+    -fx-background-radius: 0px;
+    -fx-border-color: #1ebcc8;
+    -fx-background-color : #21d1de;
+    -fx-border-width: 1 1 1 1;
+}
+#moreButton:hover{
+    -fx-background-radius: 0px;
+    -fx-border-color: #1ba7b1;
+    -fx-background-color : #1ebcc8;
+    -fx-border-width: 1 1 1 1;
+}
+.otherButtons {
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: #e6a2eb;
+    -fx-background-color : #f2c0f2;
+    -fx-border-width: 1 1 1 1;
+}
+.otherButtons:hover {
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: #e6a2eb;
+    -fx-background-color : #f2cef5;
+    -fx-border-width: 1 1 1 1;
+}
+.infoLabel{
+    -fx-background-color:  #f7e245;
+}
