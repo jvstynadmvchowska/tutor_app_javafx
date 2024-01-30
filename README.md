@@ -37,7 +37,7 @@ There are search bars and filters (by date) in various places.
 ## How to start the app?
 1. You need to shut down databases or other resources that use 3306 port.
 2. Open this repository in IntelliJ.
-3. Open Docker Desktop and terminal in directory where you store my repository, then type this in your terminal.
+3. Open Docker and terminal in directory where you store my repository, then type this in your terminal.
 ```powershell
 docker compose up --build
 ```
